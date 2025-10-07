@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dribbble UI Clone</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <span class="logo"><img src="data:image/png;base64,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" alt="logo"></span>
+    <nav class="nav">
+      <a href="#">Explore<i class="ri-arrow-down-s-line"></i></a>
+      <a href="#">Find Talent<i class="ri-arrow-down-s-line"></i></a>
+      <a href="#">Get Hired<i class="ri-arrow-down-s-line"></i></a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="right-bar">
+      <a href="#">Sign up</a>
+      <a href="#">Log in</a>
+    </div>
+  </div>
+  <main>
+    <div class="wrap">
+        <div class="text">
+            <h2>Discover the World’s Top Designers</h2>
+            <p>Explore work from the most talented and accomplished designers ready to take on your next project.</p>
+            <div class="btns">   
+             <button class="one"><i class="ri-image-line"></i> Shots</button>
+            <button><i class="ri-color-filter-line"></i> Designers</button>
+            <button><i class="ri-service-line"></i> Service</button></div>
+            <div class="search-bar">
+            <input type="text" placeholder="Search shots…"><i class="ri-search-line"></i>
+            </div>
+        </div>
+        <div class="vid">
+            <video src="./video.mp4" autoplay muted loop></video>
+        </div>
+    </div>
+    <div class="filter-bar">
+        <button>Popular<i class="ri-arrow-down-s-line"></i></button>
+        <div class="filter">
+            <a href="">Discover</a>
+            <a href="">Animation</a>
+            <a href="">Branding</a>
+            <a href="">Illustration</a>
+            <a href="">Mobile</a>
+            <a href="">Print</a>
+            <a href="">Product Design</a>
+        </div>
+        <button><i class="ri-filter-3-line"></i> Filter</button>
+    </div>
+    <div class="shots-grid">
+      <div class="card">
+        <div class="shot-card">
+                <img class="shot-img" src="./images/9ad93821334590074eb5986a165fa50c.webp" alt="Shot Example">
+        <div class="bottom">
+            <h5>innovative UI</h5>
+            <div class="icon">
+                <i class="ri-bookmark-line"></i>
+                <i class="ri-poker-hearts-line"></i>
+            </div>
+        </div>
+      </div>
+      <div class="shot-info">
+          <div class="shot-title">
+            <img src="https://images.unsplash.com/photo-1759353521781-7662cb209271?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="profile picture">
+            <h5>Nixtio</h5>
+        </div>
+          <div class="shot-meta"><i class="ri-poker-hearts-fill"></i> 90 <i class="ri-eye-fill"></i> 45K</div>
+        </div>
+      </div>
+    <div class="card">
+            <div class="shot-card">
+            <img class="shot-img" src="./images/original-7ec2b7eec9810b4dee88f7228eaae762.webp" alt="Shot Example">
+            <div class="bottom">
+                <h5> AI fitness App</h5>
+                <div class="icon">
+                    <i class="ri-bookmark-line"></i>
+                    <i class="ri-poker-hearts-line"></i>
+                </div>
+            </div>
+        </div>
+        <div class="shot-info">
+            <div class="shot-title">
+                <img src="https://images.unsplash.com/photo-1758612897981-db1691d989fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDU1fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="profile picture">
+                <h5>strangehelix</h5>
+            </div>
+            <div class="shot-meta"><i class="ri-poker-hearts-fill"></i> 73 <i class="ri-eye-fill"></i> 1.6M</div>
+            </div>
+        </div>
+    <div class="card">
+        <div class="shot-card">
+        <img class="shot-img" src="./images/1c68e2145f426b64b2503d2155a93814.webp" alt="Shot Example">
+        <div class="bottom">
+            <h5>Work OS</h5>
+            <div class="icon">
+                <i class="ri-bookmark-line"></i>
+                <i class="ri-poker-hearts-line"></i>
+            </div>
+        </div>
+      </div>
+      <div class="shot-info">
+          <div class="shot-title">
+            <img src="https://images.unsplash.com/photo-1755311903559-57c5f5441ed9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDY5fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="profile picture">
+            <h5>Outcrowd</h5>
+        </div>
+          <div class="shot-meta"><i class="ri-poker-hearts-fill"></i> 89 <i class="ri-eye-fill"></i> 60K</div>
+        </div>
+      </div>
+    <div class="card">
+        <div class="shot-card">
+        <img class="shot-img" src="./images/860819a53301557e0858564d8379133b.webp" alt="Shot Example">
+        <div class="bottom">
+            <h5>UI-UX</h5>
+            <div class="icon">
+                <i class="ri-bookmark-line"></i>
+                <i class="ri-poker-hearts-line"></i>
+            </div>
+        </div>
+      </div>
+      <div class="shot-info">
+          <div class="shot-title">
+            <img src="https://images.unsplash.com/photo-1758575603807-1f01152edcb5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDExMHx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8" alt="profile picture">
+            <h5>Budiarti R.s</h5>
+        </div>
+          <div class="shot-meta"><i class="ri-poker-hearts-fill"></i> 26 <i class="ri-eye-fill"></i> 1.3K</div>
+        </div>
+      </div>
+    <div class="card">
+        <div class="shot-card">
+        <img class="shot-img" src="./images/a3f5e0d2aed64ccb4e61c986519551a4.webp" alt="Shot Example">
+        <div class="bottom">
+            <h5>Business Card Designs</h5>
+            <div class="icon">
+                <i class="ri-bookmark-line"></i>
+                <i class="ri-poker-hearts-line"></i>
+            </div>
+        </div>
+      </div>
+      <div class="shot-info">
+          <div class="shot-title">
+            <img src="https://plus.unsplash.com/premium_photo-1708275672423-837db6d3d700?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDExMnx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8" alt="profile picture">
+            <h5>Cajvanean C. Alexandru</h5>
+        </div>
+          <div class="shot-meta"><i class="ri-poker-hearts-fill"></i> 8 <i class="ri-eye-fill"></i> 150</div>
+        </div>
+      </div>
+    <div class="card">
+        <div class="shot-card">
+        <img class="shot-img" src="./images/c7434cc4b019e036c7459035d25c47d7.webp" alt="Shot Example">
+        <div class="bottom">
+            <h5>R + Box + Prism Logo</h5>
+            <div class="icon">
+                <i class="ri-bookmark-line"></i>
+                <i class="ri-poker-hearts-line"></i>
+            </div>
+        </div>
+      </div>
+      <div class="shot-info">
+          <div class="shot-title">
+            <img src="https://images.unsplash.com/photo-1758183583798-b7038bca9272?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzMHx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8" alt="profile picture">
+            <h5>By Jane Doe</h5>
+        </div>
+          <div class="shot-meta"><i class="ri-poker-hearts-fill"></i> 50 <i class="ri-eye-fill"></i> 600</div>
+        </div>
+      </div>
+    <div class="card">
+        <div class="shot-card">
+        <img class="shot-img" src="./images/still-9430648227443327db378b89454221ef.webp" alt="Shot Example">
+        <div class="bottom">
+            <h5>Education App</h5>
+            <div class="icon">
+                <i class="ri-bookmark-line"></i>
+                <i class="ri-poker-hearts-line"></i>
+            </div>
+        </div>
+      </div>
+      <div class="shot-info">
+          <div class="shot-title">
+            <img src="https://plus.unsplash.com/premium_photo-1757637871873-402e14c91eaf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzMnx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8" alt="profile picture">
+            <h5>Emote</h5>
+        </div>
+          <div class="shot-meta"><i class="ri-poker-hearts-fill"></i> 73 <i class="ri-eye-fill"></i> 6.5M</div>
+        </div>
+      </div>
+    <div class="card">
+        <div class="shot-card">
+        <img class="shot-img" src="./images/b9f4aad67c912479f419c36ed4b51f85.webp" alt="Shot Example">
+        <div class="bottom">
+            <h5>Design Exploration</h5>
+            <div class="icon">
+                <i class="ri-bookmark-line"></i>
+                <i class="ri-poker-hearts-line"></i>
+            </div>
+        </div>
+      </div>
+      <div class="shot-info">
+          <div class="shot-title">
+            <img src="https://images.unsplash.com/photo-1758600587378-b540175903e4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQzfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="profile picture">
+            <h5>Paperpillar</h5>
+        </div>
+          <div class="shot-meta"><i class="ri-poker-hearts-fill"></i> 65 <i class="ri-eye-fill"></i> 4.5K</div>
+        </div>
+      </div>
+    <div class="card">
+        <div class="shot-card">
+        <img class="shot-img" src="./images/7ecea257b066624ffc074c68e3bb79d1.webp" alt="Shot Example">
+        <div class="bottom">
+            <h5>On Alert</h5>
+            <div class="icon">
+                <i class="ri-bookmark-line"></i>
+                <i class="ri-poker-hearts-line"></i>
+            </div>
+        </div>
+      </div>
+      <div class="shot-info">
+          <div class="shot-title">
+            <img src="https://images.unsplash.com/photo-1758539412442-23b83300f0bd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI4fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="profile picture">
+            <h5>Mike Bruner</h5>
+        </div>
+          <div class="shot-meta"><i class="ri-poker-hearts-fill"></i> 62 <i class="ri-eye-fill"></i> 7.7M</div>
+        </div>
+      </div>
+    <div class="card">
+        <div class="shot-card">
+        <img class="shot-img" src="./images/6ec324bd5f92e4593bbfdefcf3e474b0.webp" alt="Shot Example">
+        <div class="bottom">
+            <h5> E-commerce Website</h5>
+            <div class="icon">
+                <i class="ri-bookmark-line"></i>
+                <i class="ri-poker-hearts-line"></i>
+            </div>
+        </div>
+      </div>
+      <div class="shot-info">
+          <div class="shot-title">
+            <img src="https://images.unsplash.com/photo-1733325154702-5d5e5d53b6ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDIyfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="profile picture">
+            <h5>Ronas IT</h5>
+        </div>
+          <div class="shot-meta"><i class="ri-poker-hearts-fill"></i> 88 <i class="ri-eye-fill"></i> 4.8K</div>
+        </div>
+      </div>
+    <div class="card">
+        <div class="shot-card">
+        <img class="shot-img" src="./images/0e20424e5e2eaba2cb245d06511675b4.webp" alt="Shot Example">
+        <div class="bottom">
+            <h5>My fav logos 2023-2023</h5>
+            <div class="icon">
+                <i class="ri-bookmark-line"></i>
+                <i class="ri-poker-hearts-line"></i>
+            </div>
+        </div>
+      </div>
+      <div class="shot-info">
+          <div class="shot-title">
+            <img src="https://images.unsplash.com/photo-1758685848177-93817e9ad5a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE5fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="profile picture">
+            <h5>syncrely</h5>
+        </div>
+          <div class="shot-meta"><i class="ri-poker-hearts-fill"></i> 3k <i class="ri-eye-fill"></i> 150m</div>
+        </div>
+      </div>
+    <div class="card">
+        <div class="shot-card">
+        <img class="shot-img" src="./images/still-07102e47f777a90a81e99b85247732c2.webp" alt="Shot Example">
+        <div class="bottom">
+            <h5>Web-3 components</h5>
+            <div class="icon">
+                <i class="ri-bookmark-line"></i>
+                <i class="ri-poker-hearts-line"></i>
+            </div>
+        </div>
+      </div>
+      <div class="shot-info">
+          <div class="shot-title">
+            <img src="https://images.unsplash.com/photo-1759675505715-fb7378b4660d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D" alt="profile picture">
+            <h5>Dipa Inhouse</h5>
+        </div>
+          <div class="shot-meta"><i class="ri-poker-hearts-fill"></i> 45 <i class="ri-eye-fill"></i> 700</div>
+        </div>
+      </div>
+    </div>
+    <div class="end-btn">
+        <button>Sign up to continue</button>
+    </div>
+  </main>
+</body>
+</html>
