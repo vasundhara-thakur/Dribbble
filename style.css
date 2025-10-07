@@ -248,9 +248,3 @@ body {
 .end-btn button:hover{
   background-color: rgb(66, 65, 65);
 }
-@media (max-width: 600px) {
-  .header { flex-direction: column; padding: 1rem; }
-  .search-bar { margin: 1rem 0; }
-  .shots-grid { padding: 1rem; gap: 1rem; }
-  .vid video{display: none;}
-}
